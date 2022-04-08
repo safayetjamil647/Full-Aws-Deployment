@@ -1,0 +1,19 @@
+version: "3.6"
+services:
+   itembackend:
+     container_name: items-container
+     image: items_image:latest
+
+     build:
+         context: ./items-backend
+     ports:
+      - 8000:8000
+
+   categorybackend:
+     container_name: category-container
+     image: category_image:latest
+
+     build:
+         context: ./category-backend
+     ports:
+      - 8001:8001
