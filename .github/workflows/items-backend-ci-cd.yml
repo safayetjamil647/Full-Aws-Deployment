@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Direct to Items Backend
-      # Check out repo so our workflow can access it
-        uses: actions/checkout@v2
         run: cd ./items-backend
       # Step-1 Setup Python
       - name: Set up Python
