@@ -60,8 +60,7 @@ jobs:
       - name: Add API files to Zip file
         working-directory: ./items-backend/app
         run: |
-          ls -la
-          && zip -g ../app.zip -r .
+         zip -g ../app.zip -r .
       - name: Upload zip file artifact
         uses: actions/upload-artifact@v2
         with:
