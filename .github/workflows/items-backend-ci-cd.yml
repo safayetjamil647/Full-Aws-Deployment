@@ -17,9 +17,10 @@ jobs:
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
-      - name: Direct to Items Backend
+      - name: Open Web Items Backend Directory
+        working-directory: ./items-backend
         run: |
-          cd ./items-backend
+          ls -la
       # Step-1 Setup Python
       - name: Set up Python
         # This action sets up a Python environment for use in actions
