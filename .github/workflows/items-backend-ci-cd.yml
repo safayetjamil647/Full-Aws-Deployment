@@ -17,8 +17,10 @@ jobs:
     steps:
       - name: Direct to Items Backend
       # Check out repo so our workflow can access it
-      - uses: actions/checkout@v2
-      - uses: dorny/paths-filter@v2
+        uses: actions/checkout@v2
+
+      - name: Redirect   
+        uses: dorny/paths-filter@v2
         id: filter
         with:
           filters: |
