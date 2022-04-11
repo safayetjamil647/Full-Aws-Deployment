@@ -19,11 +19,11 @@ jobs:
       # Check out repo so our workflow can access it
       - uses: actions/checkout@v2
       - uses: dorny/paths-filter@v2
-          id: filter
-          with:
-            filters: |
-              items-backend:
-                - 'items-backend/**'
+        id: filter
+        with:
+          filters: |
+            items-backend:
+              - 'items-backend/**'
       # Step-1 Setup Python
       - name: Set up Python
         # This action sets up a Python environment for use in actions
