@@ -16,7 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Direct to Items Backend
-        run: cd ./items-backend
+        run: |
+          cd ./items-backend
       # Step-1 Setup Python
       - name: Set up Python
         # This action sets up a Python environment for use in actions
