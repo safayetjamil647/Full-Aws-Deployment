@@ -58,7 +58,7 @@ jobs:
           cd ./env/lib/python3.8/site-packages
           zip -r9 ../../../../app.zip .
       - name: Add API files to Zip file
-        working-directory: ./app
+        working-directory: ./items-backend/app
         run: |
           ls -la
           && zip -g ../app.zip -r .
