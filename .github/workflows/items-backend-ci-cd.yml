@@ -18,14 +18,7 @@ jobs:
       - name: Direct to Items Backend
       # Check out repo so our workflow can access it
         uses: actions/checkout@v2
-
-      - name: Redirect   
-        uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          filters: |
-            items-backend:
-              - 'items-backend/**'
+        run: cd ./items-backend
       # Step-1 Setup Python
       - name: Set up Python
         # This action sets up a Python environment for use in actions
