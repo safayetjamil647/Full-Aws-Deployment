@@ -59,11 +59,11 @@ jobs:
           cd ./env/lib/python3.8/site-packages
           zip -r9 ../../../../itemsApi.zip .
       - name: Add API files to Zip file
-        working-directory: ./items-backend/itemsApi
+        working-directory: ./items-backend/ItemsApi
         run: |
-         zip -g ../itemsApi.zip -r .
+         zip -g ../ItemsApi.zip -r .
       - name: Upload zip file artifact
         uses: actions/upload-artifact@v2
         with:
-          name: itemsApi
-          path: itemsApi.zip
+          name: ItemsApi
+          path: ItemsApi.zip

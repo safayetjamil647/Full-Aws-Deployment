@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "items-api"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1o42yrp8rho7h"
+s3_prefix = "items-api"
+region = "us-west-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
+parameter_overrides = "REGIONNAME=\"us-west-1\""
