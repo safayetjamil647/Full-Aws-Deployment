@@ -13,10 +13,6 @@ Resources:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: Ecommerce
-  ItemsTable:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      TableName: Items
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
