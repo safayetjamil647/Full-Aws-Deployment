@@ -28,5 +28,5 @@ def lambda_handler(message, context):
     return {
         'statusCode': 200,
         'headers': {},
-        'body': json.dumps(response['Ecommerce'])
+        'body': json.dumps(response['Items'])
     }
