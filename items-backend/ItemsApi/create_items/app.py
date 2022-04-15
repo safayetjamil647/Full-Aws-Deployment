@@ -15,7 +15,8 @@ def lambda_handler(message, context):
             'body': json.dumps({'msg': 'Bad Request'})
         }
 
-    table_name = os.environ.get('TABLE', 'Items')
+    table_name = os.environ.get('TABLE', 'Ecommerce')
+
     region = os.environ.get('REGION', 'us-west-2')
 
     item_table = boto3.resource(

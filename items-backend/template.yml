@@ -9,6 +9,10 @@ Globals:
     Timeout: 3
 
 Resources:
+  EcommerceTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Ecommerce
   ItemsTable:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -22,8 +26,6 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
-
-
   CreateItemFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -38,8 +40,22 @@ Resources:
             Method: post
       Policies:
         - DynamoDBCrudPolicy:
-            TableName: !Ref ItemsTable
-
+            TableName: !Ref EcommerceTable
+  ListItemsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ItemsApi/list_items/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Events:
+        CreateItem:
+          Type: Api
+          Properties:
+            Path: /items
+            Method: get
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref EcommerceTable
 Outputs:
   ItemsApi:
       Description: "API Gateway Items Endpoint Url"
