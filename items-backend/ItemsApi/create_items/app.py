@@ -16,6 +16,7 @@ def lambda_handler(message, context):
         }
 
     table_name = os.environ.get('TABLE', 'Ecommerce')
+
     region = os.environ.get('REGION', 'us-west-2')
 
     item_table = boto3.resource(

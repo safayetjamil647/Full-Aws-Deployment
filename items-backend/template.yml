@@ -13,6 +13,10 @@ Resources:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: Ecommerce
+  ItemsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Items
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
@@ -22,8 +26,6 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
-
-
   CreateItemFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -54,7 +56,6 @@ Resources:
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref EcommerceTable
-
 Outputs:
   ItemsApi:
       Description: "API Gateway Items Endpoint Url"
